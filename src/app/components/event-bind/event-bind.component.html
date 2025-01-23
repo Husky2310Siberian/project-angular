@@ -9,3 +9,12 @@
     <button class="btn btn-primary btn-sm"
     (click)="resetTimes()">RESET</button>
 </div>
+
+<div class="mt-4 mb-4 d-flex flex-column gap-2 w-25">
+    <input type="text" class="form-control" (input)="onUserInPut($event)">
+    @if(!userInput) {
+        <span class="text-danger">No user input!!!</span>
+    } @else {
+    <span class="text-bg-info p-2">{{ userInput }}</span>
+    }
+</div>

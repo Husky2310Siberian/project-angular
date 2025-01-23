@@ -1,24 +1,21 @@
-<div class="container">
-  <h3>Welcome</h3>
+<div class="container mt-2">
+  <div class="d-flex flex-column gap-2">
+    <nav class="navbar navbar-dark bg-primary justify-content-between">
+    <a class="navbar-brand ms-3 cursor-pointer" role="button" routerLink="">Starting with Angular</a>
+    </nav>
 
-  <app-event-bind></app-event-bind>
+    <div class="d-flex flex-row gap-2">
+      <div class="d-flex flex-column text-nowrap bg-light p-2">
+        <span role="button" routerLink="component-input-example">Component Input</span>
+        <span role="button" routerLink="for-directive-example">{{'@for'}} Directive</span>
+        <span role="button" routerLink="event-bind-example">Event Bind</span>
+      </div>
 
-  <h4>Component input to Person Table</h4>
+      <span class="flex-grow-1 p-2 text-nowrap">
+        <router-outlet></router-outlet>
+      </span>
 
-  <div class="d-flex gap-5">
-
-    <app-person-table [person]="person0"></app-person-table>
-    <app-person-table></app-person-table>
-    <app-person-table [person]="person1"></app-person-table>
-
-  </div>
-
-  <h4>{{ "@for" }} Example</h4>
-  <div class="d-flex gap-2 flex-wrap">
-    @for (user of users; track user) {
-      <app-person-table [person]="user"></app-person-table>
-    }
+    </div>
 
   </div>
-
 </div>
