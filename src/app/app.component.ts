@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Person } from './shared/interfaces/person';
 import { PersonTableComponent } from './components/person-table/person-table.component';
+import { EventBindComponent } from './components/event-bind/event-bind.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet , PersonTableComponent],
+  imports: [RouterOutlet , PersonTableComponent , EventBindComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
