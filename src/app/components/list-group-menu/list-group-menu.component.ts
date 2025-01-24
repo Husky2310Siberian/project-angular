@@ -12,6 +12,8 @@ export class ListGroupMenuComponent {
   menu : MenuEntry [] = [
     {text : "Component Input Example" , routerLink: "component-input-example"},
     {text: "@for Directive Example" , routerLink: "for-directive-example"},
-    {text: "Event Bind Example" , routerLink:"event-bind-example"}
+    {text: "Event Bind Example" , routerLink:"event-bind-example"},
+    {text: "Simple data table", routerLink:"simple-data-table"},
+    {text: "Component Output Example" , routerLink:"component-output-example"}
   ]
 }
