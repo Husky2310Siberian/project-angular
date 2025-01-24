@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="container mt-2">
   <div class="d-flex flex-column gap-2">
     <nav class="navbar navbar-dark bg-primary justify-content-between">
@@ -5,17 +7,17 @@
     </nav>
 
     <div class="d-flex flex-row gap-2">
-      <div class="d-flex flex-column text-nowrap bg-light p-2">
-        <span role="button" routerLink="component-input-example">Component Input</span>
-        <span role="button" routerLink="for-directive-example">{{'@for'}} Directive</span>
-        <span role="button" routerLink="event-bind-example">Event Bind</span>
-      </div>
+      <app-list-group-menu></app-list-group-menu>
 
-      <span class="flex-grow-1 p-2 text-nowrap">
+      <div class="flex-grow-1 p-2 text-nowrap w-75">
         <router-outlet></router-outlet>
-      </span>
+      </div>
 
     </div>
 
   </div>
+
+
 </div>
+
+<app-footer class="footer p-5 "></app-footer>
