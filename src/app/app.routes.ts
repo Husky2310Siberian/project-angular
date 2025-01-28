@@ -6,6 +6,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { EventBindComponent } from './components/event-bind/event-bind.component';
 import { SimpleDatatableComponent } from './components/simple-datatable/simple-datatable.component';
 import { ComponentOutputExampleComponent } from './components/component-output-example/component-output-example.component';
+import { ReactiveFormsComponent } from './componrnts/reactive-forms/reactive-forms.component';
 
 export const routes: Routes = [
     {path: 'component-input-example', component: ComponentInputComponent},
@@ -13,6 +14,7 @@ export const routes: Routes = [
     {path: 'event-bind-example', component: EventBindComponent},
     {path: 'welcome', component: WelcomeComponent},
     {path: 'component-output-example', component: ComponentOutputExampleComponent },
+    {path : 'reactive-forms' , component:ReactiveFormsComponent},
     {path: 'simple-data-table', component:SimpleDatatableComponent},
     {path: '', redirectTo:'/welcome', pathMatch:'full'}
     
