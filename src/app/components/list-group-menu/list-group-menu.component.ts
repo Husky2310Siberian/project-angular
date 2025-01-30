@@ -15,6 +15,7 @@ export class ListGroupMenuComponent {
     {text: "Event Bind Example" , routerLink:"event-bind-example"},
     {text: "Simple data table", routerLink:"simple-data-table"},
     {text: "Component Output Example" , routerLink:"component-output-example"},
-    {text: "Reactive Forms", routerLink:"reactive-forms"}
+    {text: "Reactive Forms", routerLink:"reactive-forms"},
+    {text: "Template Driven Form" , routerLink:"template-driven-form"}
   ]
 }

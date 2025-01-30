@@ -18,7 +18,6 @@ export class ReactiveFormStructureComponent {
 
     @Output() person = new EventEmitter<EPerson>()
 
-
   userForm  = new FormGroup({
     givenName : new FormControl('', Validators.required),
     surName: new FormControl('' , Validators.required),
@@ -30,7 +29,6 @@ export class ReactiveFormStructureComponent {
     email : new FormControl('', [Validators.required, Validators.email]),      
     address : new FormControl ('', Validators.required)
   })
-
 
   onSubmit(value:any){
     console.log(value);
