@@ -10,6 +10,9 @@ import { ReactiveFormsComponent } from './componrnts/reactive-forms/reactive-for
 import { TemplateDrivenFormsComponent } from './components/template-driven-forms/template-driven-forms.component';
 import { HttpClientExampleComponent } from './components/http-client-example/http-client-example.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { RestrictedContentExampleComponent } from './components/restricted-content-example/restricted-content-example.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
     {path: 'component-input-example', component: ComponentInputComponent},
@@ -22,6 +25,8 @@ export const routes: Routes = [
     {path: 'simple-data-table', component:SimpleDatatableComponent},
     {path: '', redirectTo:'/welcome', pathMatch:'full'},
     {path: 'http-client-example' , component: HttpClientExampleComponent},
-    {path: 'user-registration-example', component: UserRegistrationComponent}
+    {path: 'user-registration-example', component: UserRegistrationComponent},
+    {path: 'restricted-content-example', component: RestrictedContentExampleComponent , canActivate: [authGuard]},
+    {path:'login' , component: UserLoginComponent}
     
 ];
