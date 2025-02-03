@@ -14,7 +14,7 @@ export interface Customer {
     surName : string,
     email : string,
     afm: string,
-    phoneNumber: PhoneNumber[];
+    phoneNumbers: PhoneNumber[];
     address : Address;
 
 }

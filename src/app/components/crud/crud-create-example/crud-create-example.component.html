@@ -1,8 +1,104 @@
 <div class="d-flex flex-column gap-2">
     <app-crud-navbar></app-crud-navbar>
 
-    <div class="text-wrap">
-        <p>Create Customer</p>
+    <div>
+        <h4>Create Customer</h4>
+        <h5>Insert Customer</h5>
+
+        <form [formGroup]="form" class="d-flex flex-column gap-2 w-50">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="givenName">
+                <mat-error>Name is required field</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Surname</mat-label>
+                <input matInput type="text" formControlName="surName">
+                <mat-error>Surname is required field</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email">
+                <mat-error>Email is required field</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>TAX Number</mat-label>
+                <input matInput type="text" formControlName="afm">
+                <mat-error>Tax number is required field</mat-error>
+            </mat-form-field>
+
+            <div formArrayName="phoneNumbers">
+                @for (phone of phoneNumbers.controls; let i= $index; track i) {
+                    index->>>>>{{i}}
+                    <div [formGroupName]="i" class="d-flex gap-3 align-items-center">
+                        <mat-form-field>
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput type="text" formControlName="number">
+                            <mat-error>Phone number is required field</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Type Phone Number</mat-label>
+                            <mat-select formControlName="type">
+                                <mat-option value="mobile">Mobile</mat-option>
+                                <mat-option value="work">Work</mat-option>
+                                <mat-option value="home">Home</mat-option>
+                            </mat-select>
+                            <mat-error>Phone number is required field</mat-error>
+                        </mat-form-field>
+
+                        <mat-icon role="button" 
+                                    class="cursor-pointer" 
+                                    (click)="removePhoneNumber(i)">
+                                    delete
+                        </mat-icon>
+
+                        <mat-icon role="button" 
+                                    class="cursor-pointer"
+                                    (click)="addPhoneNumber()">
+                            add    
+                        </mat-icon>
+                    </div>
+                }
+            </div>
+
+            <div class="d-flex flex-column" formGroupName="address">
+                <mat-form-field>
+                    <mat-label>Street</mat-label>
+                    <input matInput type="text" formControlName="street">
+                    <mat-error>Street is required field</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>City</mat-label>
+                    <input matInput type="text" formControlName="city">
+                    <mat-error>City is required field</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Zipcode</mat-label>
+                    <input matInput type="text" formControlName="zipcode">
+                    <mat-error>Zipcode is required field</mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+
+        <div class="d-flex gap-2">
+            <button mat-raised-button 
+                    color="primary"
+                    [disabled]="form.invalid"
+                    (click)="onSubmit(form.value)">
+                    Submit
+            </button>
+
+            <button mat-raised-button
+                    color="warm"
+                    (click)="form.reset()">
+                    Reset
+            </button>
+        </div>
     </div>
-    
 </div>
